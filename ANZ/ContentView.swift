@@ -1,21 +1,9 @@
-//
-//  ContentView.swift
-//  ANZ
-//
-//  Created by Satender Dagar on 08/08/25.
-//
-
 import SwiftUI
+import User
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        UserListView(viewModel: UserListViewModel())
     }
 }
 

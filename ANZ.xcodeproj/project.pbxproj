@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		098A21C92E4587F0006D34B9 /* Common in Frameworks */ = {isa = PBXBuildFile; productRef = 098A21C82E4587F0006D34B9 /* Common */; };
+		098A21CB2E4587F0006D34B9 /* Model in Frameworks */ = {isa = PBXBuildFile; productRef = 098A21CA2E4587F0006D34B9 /* Model */; };
+		098A21CD2E4587F0006D34B9 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 098A21CC2E4587F0006D34B9 /* Networking */; };
+		098A21CF2E4587F0006D34B9 /* User in Frameworks */ = {isa = PBXBuildFile; productRef = 098A21CE2E4587F0006D34B9 /* User */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		098A219E2E458370006D34B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +36,25 @@
 		098A21A72E458370006D34B9 /* ANZUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ANZUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		098A21C12E4584B3006D34B9 /* Exceptions for "ANZ" folder in "ANZ" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Packages/Core/Networking,
+				Packages/Features/User,
+				Packages/Foundation/Common,
+				Packages/Foundation/Model,
+			);
+			target = 098A218C2E45836E006D34B9 /* ANZ */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		098A218F2E45836E006D34B9 /* ANZ */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				098A21C12E4584B3006D34B9 /* Exceptions for "ANZ" folder in "ANZ" target */,
+			);
 			path = ANZ;
 			sourceTree = "<group>";
 		};
@@ -52,6 +75,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				098A21CD2E4587F0006D34B9 /* Networking in Frameworks */,
+				098A21CB2E4587F0006D34B9 /* Model in Frameworks */,
+				098A21C92E4587F0006D34B9 /* Common in Frameworks */,
+				098A21CF2E4587F0006D34B9 /* User in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +105,7 @@
 				098A218F2E45836E006D34B9 /* ANZ */,
 				098A21A02E458370006D34B9 /* ANZTests */,
 				098A21AA2E458370006D34B9 /* ANZUITests */,
+				098A21C72E4587F0006D34B9 /* Frameworks */,
 				098A218E2E45836E006D34B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +118,13 @@
 				098A21A72E458370006D34B9 /* ANZUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		098A21C72E4587F0006D34B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +147,10 @@
 			);
 			name = ANZ;
 			packageProductDependencies = (
+				098A21C82E4587F0006D34B9 /* Common */,
+				098A21CA2E4587F0006D34B9 /* Model */,
+				098A21CC2E4587F0006D34B9 /* Networking */,
+				098A21CE2E4587F0006D34B9 /* User */,
 			);
 			productName = ANZ;
 			productReference = 098A218D2E45836E006D34B9 /* ANZ.app */;
@@ -558,6 +597,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		098A21C82E4587F0006D34B9 /* Common */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Common;
+		};
+		098A21CA2E4587F0006D34B9 /* Model */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Model;
+		};
+		098A21CC2E4587F0006D34B9 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+		098A21CE2E4587F0006D34B9 /* User */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = User;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 098A21852E45836E006D34B9 /* Project object */;
 }

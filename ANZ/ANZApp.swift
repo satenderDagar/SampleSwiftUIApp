@@ -1,10 +1,3 @@
-//
-//  ANZApp.swift
-//  ANZ
-//
-//  Created by Satender Dagar on 08/08/25.
-//
-
 import SwiftUI
 
 @main
