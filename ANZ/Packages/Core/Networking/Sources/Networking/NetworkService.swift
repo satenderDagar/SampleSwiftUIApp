@@ -1,10 +1,10 @@
 import Foundation
 
-public protocol NetworkServiceProtocol {
+public protocol NetworkServiceProtocol: Actor {
     func fetchData(from url: URL) async throws -> Data
 }
 
-public final class NetworkService: NetworkServiceProtocol, Sendable {
+public final actor NetworkService: NetworkServiceProtocol {
     public static let shared = NetworkService()
     private let sesssion: URLSession
     public init(session: URLSession = .shared) {

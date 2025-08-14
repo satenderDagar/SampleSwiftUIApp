@@ -3,14 +3,9 @@ import Model
 import Common
 
 public struct UserListView: View {
-    @ObservedObject private var viewModel: UserListViewModel
-
-    public init(viewModel: UserListViewModel) {
-        self.viewModel =  viewModel
-        Task {
-            await viewModel.fetchUsers()
-        }
-    }
+    @StateObject private var viewModel: UserListViewModel = UserListViewModel()
+    
+    public init() {}
 
     public var body: some View {
         NavigationStack {
@@ -34,16 +29,20 @@ public struct UserListView: View {
                             }
                         }
                     }
-                    .navigationDestination(for: User.self, destination: { user in
-                        UserDetailView(user: user)
-                    })
+                    
                 }
-            }.navigationTitle("Users")
-                .refreshable {
-                    Task {
-                        await viewModel.fetchUsers()
-                    }
-                }
+            }
+            .task {
+                await viewModel.fetchUsers()
+            }
+            
+            .navigationDestination(for: User.self, destination: { user in
+                UserDetailView(user: user)
+            })
+            .navigationTitle("Users")
+            .refreshable {
+                await viewModel.fetchUsers()
+            }
         }
     }
 }

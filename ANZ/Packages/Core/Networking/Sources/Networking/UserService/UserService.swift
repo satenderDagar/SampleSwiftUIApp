@@ -2,11 +2,12 @@ import Foundation
 import Model
 import Common
 
-public protocol UserServiceProtocol {
+public protocol UserServiceProtocol: Actor {
     func fetchUsers() async throws -> [User]
 }
 
-public final class UserService: UserServiceProtocol {
+public final actor UserService: UserServiceProtocol {
+    
     private let network: NetworkServiceProtocol
     private let endpoint = URL(string: Endpoint.users.path)
 
@@ -14,6 +15,7 @@ public final class UserService: UserServiceProtocol {
         self.network = network
     }
 
+    
     public func fetchUsers() async throws -> [User] {
         guard let endpoint else {
             throw NetworkError.invalidUrl

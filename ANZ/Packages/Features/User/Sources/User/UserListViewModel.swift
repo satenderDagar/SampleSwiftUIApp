@@ -16,25 +16,15 @@ public final class UserListViewModel: ObservableObject {
 
     public func fetchUsers() async {
         isLoading = true
-        defer {  }
+        defer { isLoading = false }
         
         let service = userService
         do {
-            let users = try await withCheckedThrowingContinuation { continuation in
-                Task {
-                    do {
-                        let users = try await service.fetchUsers()
-                        continuation.resume(returning: users)
-                    } catch {
-                        continuation.resume(throwing: error)
-                    }
-                }
-            }
-            self.users = users
-            isLoading = false
+            let users = try await service.fetchUsers()
         } catch {
-            isLoading = false
             errorMessage = error.localizedDescription
+            
         }
+        self.users = users        
     }
 }
